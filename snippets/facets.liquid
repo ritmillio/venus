@@ -59,7 +59,7 @@
                       </facet-remove>
                     </div>
 
-                    <ul class="facets__list list-unstyled" role="list">
+                    <ul class="facets__list m-0 p-0 list-none" role="list">
                       {%- for value in filter.values -%}
                         <li class="list-menu__item facets__item">
                           <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
@@ -174,7 +174,7 @@
                     <span class="active-facets__button-inner button button--tertiary">
                       {{ value.label | escape }}
                       {% render 'icon-close-small' %}
-                      <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                      <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.facets.clear_filter' | t }}</span>
                     </span>
                   </a>
                 </facet-remove>
@@ -186,7 +186,7 @@
                       <span class="active-facets__button-inner button button--tertiary">
                         {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
                         {% render 'icon-close-small' %}
-                        <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                        <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.facets.clear_filter' | t }}</span>
                       </span>
                     </a>
                   </facet-remove>
@@ -228,7 +228,7 @@
           </div>
         {%- endif -%}
 
-        <div class="product-count light" role="status">
+        <div class="product-count opacity-70" role="status">
           <h2 class="product-count__text text-body">
             <span id="ProductCountDesktop">
               {%- if results.results_count -%}
@@ -309,7 +309,7 @@
                         {% render 'icon-arrow' %}
                         {{ filter.label | escape }}
                       </button>
-                      <ul class="mobile-facets__list list-unstyled" role="list">
+                      <ul class="mobile-facets__list m-0 p-0 list-none" role="list">
                         {%- for value in filter.values -%}
                           <li class="mobile-facets__item list-menu__item">
                             <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
@@ -461,7 +461,7 @@
             <span class="active-facets__button-inner button button--tertiary">
               {{ value.label | escape }}
               {% render 'icon-close-small' %}
-              <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+              <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.facets.clear_filter' | t }}</span>
             </span>
           </a>
         </facet-remove>
@@ -474,7 +474,7 @@
               <span class="active-facets__button-inner button button--tertiary">
                 {%- if filter.min_value.value -%}{{ filter.min_value.value | money }}{%- else -%}{{ 0 | money }}{%- endif -%}-{%- if filter.max_value.value -%}{{ filter.max_value.value | money }}{%- else -%}{{ filter.range_max | money }}{%- endif -%}
                 {% render 'icon-close-small' %}
-                <span class="visually-hidden">{{ 'products.facets.clear_filter' | t }}</span>
+                <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.facets.clear_filter' | t }}</span>
               </span>
             </a>
           </facet-remove>
@@ -487,7 +487,7 @@
       </a>
     </facet-remove>
   </div>
-  <div class="product-count light{% unless collapse_on_larger_devices %} medium-hide large-up-hide{% endunless %}" role="status">
+  <div class="product-count opacity-70{% unless collapse_on_larger_devices %} medium-hide large-up-hide{% endunless %}" role="status">
     <h2 class="product-count__text text-body">
       <span id="ProductCount">
         {%- if results.results_count -%}

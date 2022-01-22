@@ -42,7 +42,7 @@
         <label class="field__label" for="ContactForm-email">{{ 'templates.contact.form.email' | t }} <span aria-hidden="true">*</span></label>
         {%- if form.errors contains 'email' -%}
           <small class="contact__field-error" id="ContactForm-email-error">
-            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'accessibility.error' | t }}</span>
             <span class="form__message">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</span>
           </small>
         {%- endif -%}

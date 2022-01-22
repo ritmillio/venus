@@ -53,7 +53,7 @@
               <div class="collage-content card{% if block.settings.secondary_background %} card-colored color-background-1{% endif %}{% if block.settings.image_padding %} collage-card-spacing{% endif %}" {{ block.shopify_attributes }}>
                 {%- if featured_media != blank -%}
                   <div class="collage-content__info card-information card-information__wrapper">
-                    <h3 class="card-information__text h4"><a href="{{ block.settings.product.url }}" class="full-unstyled-link">{{ block.settings.product.title | escape }}</a></h3>
+                    <h3 class="card-information__text h4"><a href="{{ block.settings.product.url }}" class="block text-current no-underline">{{ block.settings.product.title | escape }}</a></h3>
                     <span class="price">{% render 'price', product: block.settings.product %}</span>
                   </div>
                   
@@ -113,7 +113,7 @@
                   </div>
                 {%- else -%}
                   <div class="collage-card__no-image card-colored color-background-1 card__text-spacing center">
-                    <h3 class="h2"><a href="{{ block.settings.product.url }}" class="full-unstyled-link">{{ block.settings.product.title | escape }}</a></h3>
+                    <h3 class="h2"><a href="{{ block.settings.product.url }}" class="block text-current no-underline">{{ block.settings.product.title | escape }}</a></h3>
                   </div>
                   <div class="collage-product__badge">
                     <div class="card__badge">
@@ -291,7 +291,7 @@
                   {% elsif block.settings.cover_image != blank and focus_card_right and forloop.last %}
                     style="padding-bottom: {{ 1 | divided_by: block.settings.cover_image.aspect_ratio | times: 100 }}%;"
                   {% endif %}>
-                  <button class="collage-content collage-card__image-wrapper media deferred-media__poster full-unstyled-link{% if block.settings.image_padding %} collage-card-spacing{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ block.settings.video_url.id }}">
+                  <button class="collage-content collage-card__image-wrapper media deferred-media__poster block text-current no-underline{% if block.settings.image_padding %} collage-card-spacing{% endif %}" type="button" aria-haspopup="dialog" data-media-id="{{ block.settings.video_url.id }}">
                     <span class="deferred-media__poster-button motion-reduce">
                       {%- render 'icon-play' -%}
                     </span>

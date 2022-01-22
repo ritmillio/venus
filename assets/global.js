@@ -825,7 +825,7 @@ class VariantSelects extends HTMLElement {
 
         const price = document.getElementById(`price-${this.dataset.section}`);
 
-        if (price) price.classList.remove('visibility-hidden');
+        if (price) price.classList.remove('invisible');
         this.toggleAddButton(!this.currentVariant.available, window.variantStrings.soldOut);
       });
   }
@@ -856,7 +856,7 @@ class VariantSelects extends HTMLElement {
     const price = document.getElementById(`price-${this.dataset.section}`);
     if (!addButton) return;
     addButtonText.textContent = window.variantStrings.unavailable;
-    if (price) price.classList.add('visibility-hidden');
+    if (price) price.classList.add('invisible');
   }
 
   getVariantData() {

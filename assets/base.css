@@ -281,41 +281,9 @@ body,
 .shopify-challenge__container {
   margin: 7rem auto;
 }
-
-.rte-width {
-  max-width: 82rem;
-  margin: 0 auto 2rem;
-}
-
-.list-unstyled {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.hidden {
-  display: none !important;
-}
-
 .visually-hidden {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
   clip: rect(0 0 0 0);
   word-wrap: normal !important;
-}
-
-.visually-hidden--inline {
-  margin: 0;
-  height: 1em;
-}
-
-.overflow-hidden {
-  overflow: hidden;
 }
 
 .skip-to-content-link:focus {
@@ -325,15 +293,6 @@ body,
   width: auto;
   height: auto;
   clip: auto;
-}
-
-.full-width-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
 }
 
 ::selection {
@@ -466,20 +425,7 @@ blockquote {
 }
 
 .caption-with-letter-spacing {
-  font-size: 1rem;
-  letter-spacing: 0.13rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
-  text-transform: uppercase;
-}
-
-.caption-with-letter-spacing--medium {
-  font-size: 1.2rem;
-  letter-spacing: .16rem;
-}
-
-.caption-with-letter-spacing--large {
-  font-size: 1.4rem;
-  letter-spacing: 0.18rem;
 }
 
 .caption-large,
@@ -512,10 +458,6 @@ table:not([class]) th {
   border: 0.1rem solid rgba(var(--color-foreground), 0.2);
 }
 
-.hidden {
-  display: none !important;
-}
-
 @media screen and (max-width: 749px) {
   .small-hide {
     display: none !important;
@@ -532,22 +474,6 @@ table:not([class]) th {
   .large-up-hide {
     display: none !important;
   }
-}
-
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
-
-.uppercase {
-  text-transform: uppercase;
-}
-
-.light {
-  opacity: 0.7;
 }
 
 a:empty,
@@ -588,6 +514,7 @@ h6:empty {
   color: rgba(var(--color-foreground), 0.75);
 }
 
+/*not used
 .link-with-icon {
   display: inline-flex;
   font-size: 1.4rem;
@@ -596,7 +523,7 @@ h6:empty {
   text-decoration: none;
   margin-bottom: 4.5rem;
   white-space: nowrap;
-}
+}*/
 
 .link-with-icon .icon {
   width: 1.5rem;
@@ -630,12 +557,6 @@ hr {
   }
 }
 
-.full-unstyled-link {
-  text-decoration: none;
-  color: currentColor;
-  display: block;
-}
-
 .placeholder {
   background-color: rgba(var(--color-foreground), 0.04);
   color: rgba(var(--color-foreground), 0.55);
@@ -644,14 +565,6 @@ hr {
 
 details > * {
   box-sizing: border-box;
-}
-
-.break {
-  word-break: break-word;
-}
-
-.visibility-hidden {
-  visibility: hidden;
 }
 
 @media (prefers-reduced-motion) {

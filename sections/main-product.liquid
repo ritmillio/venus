@@ -22,12 +22,12 @@
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper">
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
-        <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+        <div id="GalleryStatus-{{ section.id }}" class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" role="status"></div>
         <slider-component id="GalleryViewer-{{ section.id }}" class="slider-mobile-gutter">
-          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+          <a class="skip-to-content-link button visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" href="#ProductInfo-{{ section.id }}">
             {{ "accessibility.skip_to_product_info" | t }}
           </a>
-          <ul id="Slider-Gallery-{{ section.id }}" class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
+          <ul id="Slider-Gallery-{{ section.id }}" class="product__media-list grid grid--peek m-0 p-0 list-none slider slider--mobile" role="list">
             {%- liquid
               assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
               assign media_count = product.media.size
@@ -64,7 +64,7 @@
             <div class="slider-counter caption">
               <span class="slider-counter--current">1</span>
               <span aria-hidden="true"> / </span>
-              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.slider.of' | t }}</span>
               <span class="slider-counter--total">{{ media_count }}</span>
             </div>
             <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
@@ -87,7 +87,7 @@
         {%- if media_count > 1 and section.settings.gallery_layout != 'stacked' or section.settings.mobile_thumbnails == 'show' -%}
           <slider-component id="GalleryThumbnails-{{ section.id }}" class="thumbnail-slider slider-mobile-gutter{% if section.settings.mobile_thumbnails == 'hide' %} small-hide{% endif %}{% if media_count <= 3 %} thumbnail-slider--no-slide{% endif %}">
             <button type="button" class="slider-button slider-button--prev{% if media_count <= 3 %} small-hide{% endif %}{% if media_count <= 4 %} medium-hide large-up-hide{% endif %}" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}" aria-controls="GalleryThumbnails-{{ section.id }}" data-step="3">{% render 'icon-caret' %}</button>
-            <ul id="Slider-Thumbnails-{{ section.id }}" class="thumbnail-list list-unstyled slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}">
+            <ul id="Slider-Thumbnails-{{ section.id }}" class="thumbnail-list m-0 p-0 list-none slider slider--mobile{% if section.settings.gallery_layout == 'thumbnail_slider' %} slider--tablet-up{% endif %}">
               {%- if featured_media != null -%}
                 {%- capture media_index -%}
                   {%- if featured_media.media_type == 'model' -%}{%- increment model_index -%}
@@ -240,7 +240,7 @@
 
               <quantity-input class="quantity">
                 <button class="quantity__button no-js-hidden" name="minus" type="button">
-                  <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                   {% render 'icon-minus' %}
                 </button>
                 <input class="quantity__input"
@@ -252,7 +252,7 @@
                     form="{{ product_form_id }}"
                   >
                 <button class="quantity__button no-js-hidden" name="plus" type="button">
-                  <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                   {% render 'icon-plus' %}
                 </button>
               </quantity-input>
@@ -289,11 +289,11 @@
                   </div>
                   <button class="share-button__close hidden no-js-hidden">
                     {% render 'icon-close' %}
-                    <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
+                    <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.share.close' | t }}</span>
                   </button>
                   <button class="share-button__copy no-js-hidden">
                     {% render 'icon-clipboard' %}
-                    <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
+                    <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.share.copy_to_clipboard' | t }}</span>
                   </button>
                 </div>
               </details>
@@ -459,7 +459,7 @@
               </p>
               <p class="rating-count caption">
                 <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+                <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
               </p>
             {%- endif -%}
           {%- endcase -%}

@@ -169,12 +169,12 @@
                       -%}
                     </a>
                   {%- endif -%}
-                  <ul class="list list-social list-unstyled" role="list">
+                  <ul class="list list-social m-0 p-0 list-none" role="list">
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
                           {%- render 'icon-twitter' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.twitter' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -182,7 +182,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
                           {%- render 'icon-facebook' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.facebook' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -190,7 +190,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
                           {%- render 'icon-pinterest' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.pinterest' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -198,7 +198,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
                           {%- render 'icon-instagram' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.instagram' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -206,7 +206,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
                           {%- render 'icon-tiktok' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tiktok' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -214,7 +214,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
                           {%- render 'icon-tumblr' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tumblr' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -222,7 +222,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
                           {%- render 'icon-snapchat' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.snapchat' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -230,7 +230,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
                           {%- render 'icon-youtube' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.youtube' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -238,7 +238,7 @@
                       <li class="list-social__item">
                         <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
                           {%- render 'icon-vimeo' -%}
-                          <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.vimeo' | t }}</span>
                         </a>
                       </li>
                     {%- endif -%}
@@ -309,7 +309,7 @@
                       </div>
                     </div>
 
-                    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                    <span class="predictive-search-status visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" role="status" aria-hidden="true"></span>
                   {%- endif -%}
                 </form>
               {%- if settings.predictive_search_enabled -%}
@@ -458,7 +458,7 @@
                       </div>
                     </div>
 
-                    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+                    <span class="predictive-search-status visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" role="status" aria-hidden="true"></span>
                   {%- endif -%}
                 </form>
               {%- if settings.predictive_search_enabled -%}
@@ -477,7 +477,7 @@
       {%- if shop.customer_accounts_enabled -%}
         <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
           {% render 'icon-account' %}
-          <span class="visually-hidden">
+          <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">
             {%- liquid
               if customer
                 echo 'customer.account_fallback' | t
@@ -497,13 +497,13 @@
             render 'icon-cart'
           endif
         -%}
-        <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
+        <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'templates.cart.cart' | t }}</span>
         {%- if cart != empty -%}
           <div class="cart-count-bubble">
             {%- if cart.item_count < 100 -%}
               <span aria-hidden="true">{{ cart.item_count }}</span>
             {%- endif -%}
-            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+            <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
           </div>
         {%- endif -%}
       </a>

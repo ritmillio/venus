@@ -21,7 +21,7 @@
     <div class="featured-product product grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
-          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
+          <a class="skip-to-content-link button visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" href="#ProductInfo-{{ section.id }}">
             {{ "accessibility.skip_to_product_info" | t }}
           </a>
           <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
@@ -108,7 +108,7 @@
                 </label>
                 <quantity-input class="quantity">
                   <button class="quantity__button no-js-hidden" name="minus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
+                    <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                     {% render 'icon-minus' %}
                   </button>
                   <input class="quantity__input"
@@ -120,7 +120,7 @@
                       form="{{ product_form_id }}"
                     >
                   <button class="quantity__button no-js-hidden" name="plus" type="button">
-                    <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
+                    <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                     {% render 'icon-plus' %}
                   </button>
                 </quantity-input>
@@ -157,7 +157,7 @@
                     </button>
                     <button class="share-button__copy no-js-hidden">
                       {% render 'icon-clipboard' %}
-                      <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
+                      <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.share.copy_to_clipboard' | t }}</span>
                     </button>
                   </div>
                 </details>
@@ -316,7 +316,7 @@
                 </p>
                 <p class="rating-count caption">
                   <span aria-hidden="true">({{ product.metafields.reviews.rating_count }})</span>
-                  <span class="visually-hidden">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
                 </p>
               {%- endif -%}
             {%- endcase -%}

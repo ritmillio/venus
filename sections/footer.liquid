@@ -41,7 +41,7 @@
                   </div>
                 {%- when 'link_list' -%}
                   {%- if block.settings.menu != blank and block.settings.heading != blank -%}
-                    <ul class="footer-block__details-content list-unstyled">
+                    <ul class="footer-block__details-content m-0 p-0 list-none">
                       {%- for link in block.settings.menu.links -%}
                         <li>
                           <a href="{{ link.url }}" class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}">
@@ -123,12 +123,12 @@
         {%- endif -%}
 
         {%- if section.settings.show_social -%}
-          <ul class="footer__list-social list-unstyled list-social" role="list">
+          <ul class="footer__list-social m-0 p-0 list-none list-social" role="list">
             {%- if settings.social_twitter_link != blank -%}
               <li class="list-social__item">
                 <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >
                   {%- render 'icon-twitter' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.twitter' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -136,7 +136,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
                   {%- render 'icon-facebook' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.facebook' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -144,7 +144,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
                   {%- render 'icon-pinterest' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.pinterest' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -152,7 +152,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
                   {%- render 'icon-instagram' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.instagram' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -160,7 +160,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" >
                   {%- render 'icon-tiktok' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tiktok' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -168,7 +168,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" >
                   {%- render 'icon-tumblr' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tumblr' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -176,7 +176,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" >
                   {%- render 'icon-snapchat' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.snapchat' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -184,7 +184,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_youtube_link }}" class="link list-social__link" >
                   {%- render 'icon-youtube' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.youtube' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -192,7 +192,7 @@
               <li class="list-social__item">
                 <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" >
                   {%- render 'icon-vimeo' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
+                  <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.vimeo' | t }}</span>
                 </a>
               </li>
             {%- endif -%}
@@ -209,7 +209,7 @@
           <noscript>
             {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
               <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
+                <h2 class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" id="FooterCountryLabelNoScript">{{ 'localization.country_label' | t }}</h2>
                 <select class="localization-selector link" name="country_code" aria-labelledby="FooterCountryLabelNoScript">
                   {%- for country in localization.available_countries -%}
                     <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
@@ -231,7 +231,7 @@
                     {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
                     {% render 'icon-caret' %}
                   </button>
-                  <ul id="FooterCountryList" role="list" class="disclosure__list list-unstyled" hidden>
+                  <ul id="FooterCountryList" role="list" class="disclosure__list m-0 p-0 list-none" hidden>
                     {%- for country in localization.available_countries -%}
                       <li class="disclosure__item" tabindex="-1">
                         <a class="link link--text disclosure__link caption-large{% if country.iso_code == localization.country.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
@@ -251,7 +251,7 @@
           <noscript>
             {%- form 'localization', id: 'FooterLanguageFormNoScript', class: 'localization-form' -%}
               <div class="localization-form__select">
-                <h2 class="visually-hidden" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
+                <h2 class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" id="FooterLanguageLabelNoScript">{{ 'localization.language_label' | t }}</h2>
                 <select class="localization-selector link" name="locale_code" aria-labelledby="FooterLanguageLabelNoScript">
                   {%- for language in localization.available_languages -%}
                     <option value="{{ language.iso_code }}" lang="{{ language.iso_code }}" {%- if language.iso_code == localization.language.iso_code %} selected{% endif %}>
@@ -274,7 +274,7 @@
                     {{ localization.language.endonym_name | capitalize }}
                     {% render 'icon-caret' %}
                   </button>
-                  <ul id="FooterLanguageList" role="list" class="disclosure__list list-unstyled" hidden>
+                  <ul id="FooterLanguageList" role="list" class="disclosure__list m-0 p-0 list-none" hidden>
                     {%- for language in localization.available_languages -%}
                       <li class="disclosure__item" tabindex="-1">
                         <a class="link link--text disclosure__link caption-large{% if language.iso_code == localization.language.iso_code %} disclosure__link--active{% endif %} focus-inset" href="#" hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} data-value="{{ language.iso_code }}">
@@ -293,7 +293,7 @@
       <div class="footer__column footer__column--info">
         {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'sections.footer.payment' | t }}</span>
             <ul class="list list-payment" role="list">
               {%- for type in shop.enabled_payment_types -%}
                 <li class="list-payment__item">

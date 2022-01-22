@@ -100,7 +100,7 @@
                 </div>
               </div>
   
-              <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span> 
+              <span class="predictive-search-status visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" role="status" aria-hidden="true"></span> 
             {%- endif -%}
                 
             <button type="submit" class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
@@ -189,7 +189,7 @@
                             {%- endif -%}
                             <div class="card__content">
                               <h2 class="card__text h3">{{ item.title | truncate: 50 | escape }}</h2>
-                              <div class="card-article-info caption-with-letter-spacing h5">
+                              <div class="card-article-info caption-with-letter-spacing text-base uppercase tracking-widest h5">
                                 {%- if section.settings.article_show_date -%}
                                   <span class="circle-divider">{{ item.published_at | time_tag: format: 'date' }}</span>
                                 {%- endif -%}

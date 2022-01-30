@@ -15,7 +15,7 @@ A short description of this workflow:
   - Tailwind CDN is used for development therefor you do not need to compile every single class, please note that If you forgot to delete the cdn script your theme will suffer performance issues on prod.
   - You will find your compiled Tailwind file in `assets/styles.css.liquid`,
   - Purge is enabled, after you compile Tailwind, your `assets/styles.css.liquid` file will be ready on production
-- Shopify CLI
+- ThemeKit
 - Fontawesome
 
 Currently the theme is under going maintance but you can check performance with Google Lighthouse

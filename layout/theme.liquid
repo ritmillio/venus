@@ -8,26 +8,30 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
 
-    {%- if settings.favicon != blank -%}
-      <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
-    {%- endif -%}
+    <!--Favicon-->
+    {% render 'favicon-links' %}
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-    {%- endunless -%}
+    <!--Title-->
+    {% render 'title-tag' %}
 
-    <title>
-      {{ page_title }}
-      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-    </title>
-
-    {% if page_description %}
-      <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
-
+    <!--Meta tags-->
     {% render 'meta-tags' %}
+
+    <!--Tiny Slider CDN-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">-->
+    <!--FontAwesome CDN-->
+    <script src="https://use.fontawesome.com/c0ecc55053.js"></script>
+    <!--Tailwindcss Development CDN - before production make sure to delete CDN srript under and use the production version -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    {%comment%}
+      Tailwindcss - Production
+      *Important Note*
+      You'll need to run npm run build so the classes will be added to your styles.css
+    {% endcomment %}
+    <!--Before production uncomment the tag under-->
+    <!--{{ "styles.css" | asset_url | stylesheet_tag }}-->
+
+    <!--Google analytics, facebook pixel goes here-->
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
@@ -37,19 +41,8 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
-
-    <!--FontAwesome-->
-    <script src="https://use.fontawesome.com/c0ecc55053.js"></script>
-
-    <!--Tailwindcss Development CDN - before production make sure to delete CDN srript under and use the production version -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    {%comment%}
-      Tailwindcss - Production
-      *Important Note*
-      You'll need to run npm run build so the classes will be added to your styles.css
-    {% endcomment %}
-    {{ "styles.css" | asset_url | stylesheet_tag }}
+    
+    
 
 
     {% style %}
@@ -102,11 +95,6 @@
       }
 
       body {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-columns: 100%;
-        min-height: 100%;
-        margin: 0;
         font-size: 1.5rem;
         letter-spacing: 0.06rem;
         line-height: calc(1 + 0.8 / var(--font-body-scale));
@@ -142,7 +130,7 @@
     </script>
   </head>
 
-  <body class="gradient">
+  <body class="leading-normal text-grey-darkest min-h-full flex flex-col relative overflow-x-hidden m-0">
     <a class="skip-to-content-link button visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
@@ -153,6 +141,7 @@
       {{ content_for_layout }}
     </main>
 
+    <div class="flex-1"></div>
     {% section 'footer' %}
 
     <ul hidden>

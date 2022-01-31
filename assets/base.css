@@ -2082,7 +2082,7 @@ details[open] > .header__icon--menu .icon-hamburger {
   transform: scale(0.8);
 }
 
-.js details[open]:not(.menu-opening) > .header__icon--menu .icon-close {
+.js details[open]:not(.menu-opening) > .header__icon--menu {
   visibility: hidden;
 }
 

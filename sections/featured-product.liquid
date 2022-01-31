@@ -129,12 +129,12 @@
               <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
               <share-button id="Share-{{ section.id }}" class="share-button" {{ block.shopify_attributes }}>
                 <button class="share-button__button hidden">
-                  {% render 'icon-share' %}
+                  <i class="fas fa-share"></i>
                   {{ block.settings.share_label | escape }}
                 </button>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary class="share-button__button">
-                    {% render 'icon-share' %}
+                    <i class="fas fa-share"></i>
                     {{ block.settings.share_label | escape }}
                   </summary>
                   <div id="Product-share-{{ section.id }}" class="share-button__fallback motion-reduce">
@@ -152,7 +152,7 @@
                       <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
                     </div>
                     <button class="share-button__close hidden no-js-hidden">
-                      {% render 'icon-close' %}
+                      <i class="fas fa-times"></i>
                       <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
                     </button>
                     <button class="share-button__copy no-js-hidden">
@@ -331,7 +331,7 @@
 
     <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
       <div class="product-media-modal__dialog" role="dialog" aria-label="{{ 'products.modal.label' | t }}" aria-modal="true" tabindex="-1">
-        <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+        <button id="ModalClose-{{ section.id }}" type="button" class="product-media-modal__toggle" aria-label="{{ 'accessibility.close' | t }}"><i class="fas fa-times"></i></button>
 
         <div class="product-media-modal__content" role="document" aria-label="{{ 'products.modal.label' | t }}" tabindex="0">
           {%- liquid

@@ -30,7 +30,7 @@
                     <ul class="discounts m-0 p-0 list-none" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in cart.cart_level_discount_applications -%}
                         <li class="discounts__discount discounts__discount--end">
-                          {%- render 'icon-discount' -%}
+                          <i class="fas fa-tags"></i>
                           {{ discount.title }}
                           (-{{ discount.total_allocated_amount | money }})
                         </li>

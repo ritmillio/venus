@@ -70,15 +70,7 @@
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
 
-<svg xmlns="http://www.w3.org/2000/svg" class="hidden">
-  <symbol id="icon-search" viewbox="0 0 18 19" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.03 11.68A5.784 5.784 0 112.85 3.5a5.784 5.784 0 018.18 8.18zm.26 1.12a6.78 6.78 0 11.72-.7l5.4 5.4a.5.5 0 11-.71.7l-5.41-5.4z" fill="currentColor"/>
-  </symbol>
 
-  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
-    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
-  </symbol>
-</svg>
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
   <header class="header header--{{ section.settings.logo_position }} page-width{% if section.settings.menu != blank %} header--has-menu{% endif %}">
     {%- if section.settings.menu != blank -%}
@@ -86,8 +78,8 @@
         <details id="Details-menu-drawer-container" class="menu-drawer-container">
           <summary class="header__icon header__icon--menu header__icon--summary link focus-inset" aria-label="{{ 'sections.header.menu' | t }}">
             <span>
-              {% render 'icon-hamburger' %}
-              {% render 'icon-close' %}
+              <i class="fas fa-bars"></i>
+              <i class="fas fa-times"></i>
             </span>
           </summary>
           <div id="menu-drawer" class="menu-drawer motion-reduce" tabindex="-1">
@@ -173,7 +165,7 @@
                     {%- if settings.social_twitter_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_twitter_link }}" class="list-social__link link">
-                          {%- render 'icon-twitter' -%}
+                          <i class="fab fa-twitter"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.twitter' | t }}</span>
                         </a>
                       </li>
@@ -181,7 +173,7 @@
                     {%- if settings.social_facebook_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_facebook_link }}" class="list-social__link link">
-                          {%- render 'icon-facebook' -%}
+                          <i class="fab fa-facebook"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.facebook' | t }}</span>
                         </a>
                       </li>
@@ -189,7 +181,7 @@
                     {%- if settings.social_pinterest_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_pinterest_link }}" class="list-social__link link">
-                          {%- render 'icon-pinterest' -%}
+                          <i class="fab fa-pinterest"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.pinterest' | t }}</span>
                         </a>
                       </li>
@@ -197,7 +189,7 @@
                     {%- if settings.social_instagram_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_instagram_link }}" class="list-social__link link">
-                          {%- render 'icon-instagram' -%}
+                          <i class="fab fa-instagram"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.instagram' | t }}</span>
                         </a>
                       </li>
@@ -205,7 +197,7 @@
                     {%- if settings.social_tiktok_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_tiktok_link }}" class="list-social__link link">
-                          {%- render 'icon-tiktok' -%}
+                          <i class="fab fa-tiktok"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tiktok' | t }}</span>
                         </a>
                       </li>
@@ -213,7 +205,7 @@
                     {%- if settings.social_tumblr_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_tumblr_link }}" class="list-social__link link">
-                          {%- render 'icon-tumblr' -%}
+                          <i class="fab fa-tumblr"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.tumblr' | t }}</span>
                         </a>
                       </li>
@@ -221,7 +213,7 @@
                     {%- if settings.social_snapchat_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_snapchat_link }}" class="list-social__link link">
-                          {%- render 'icon-snapchat' -%}
+                          <i class="fab fa-snapchat-ghost"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.snapchat' | t }}</span>
                         </a>
                       </li>
@@ -229,7 +221,7 @@
                     {%- if settings.social_youtube_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_youtube_link }}" class="list-social__link link">
-                          {%- render 'icon-youtube' -%}
+                          <i class="fab fa-youtube"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.youtube' | t }}</span>
                         </a>
                       </li>
@@ -237,7 +229,7 @@
                     {%- if settings.social_vimeo_link != blank -%}
                       <li class="list-social__item">
                         <a href="{{ settings.social_vimeo_link }}" class="list-social__link link">
-                          {%- render 'icon-vimeo' -%}
+                          <i class="fab fa-vimeo-v"></i>
                           <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.social.links.vimeo' | t }}</span>
                         </a>
                       </li>

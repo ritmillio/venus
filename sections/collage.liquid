@@ -323,7 +323,7 @@
 
               <modal-dialog id="PopupModal-{{ block.id }}" class="collage-video__modal media-modal">
                 <div class="collage-video__modal-content" role="dialog" aria-label="{{ block.settings.description | escape }}" aria-modal="true" tabindex="-1">
-                  <button id="ModalClose-{{ block.id }}" type="button" class="collage-video__modal-toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
+                  <button id="ModalClose-{{ block.id }}" type="button" class="collage-video__modal-toggle" aria-label="{{ 'accessibility.close' | t }}"><i class="fas fa-times"></i></button>
                   <div class="collage-video__modal-content-info">
                     <deferred-media class="collage-video__modal-video template-popup">
                       <template>

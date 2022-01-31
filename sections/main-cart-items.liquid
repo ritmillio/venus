@@ -121,7 +121,7 @@
                     <ul class="discounts m-0 p-0 list-none" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in item.discounts -%}
                         <li class="discounts__discount">
-                          {%- render 'icon-discount' -%}
+                          <i class="fas fa-tags"></i>
                           {{ discount.title }}
                         </li>
                       {%- endfor -%}

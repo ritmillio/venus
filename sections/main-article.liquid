@@ -54,12 +54,12 @@
           <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
             <share-button class="share-button" {{ block.shopify_attributes }}>
               <button class="share-button__button hidden">
-                {% render 'icon-share' %}
+                <i class="fas fa-share"></i>
                 {{ block.settings.share_label | escape }}
               </button>
               <details id="Details-{{ block.id }}-{{ section.id }}">
                 <summary class="share-button__button">
-                  {% render 'icon-share' %}
+                  <i class="fas fa-share"></i>
                   {{ block.settings.share_label | escape }}
                 </summary>
                 <div id="Article-share-{{ section.id }}" class="share-button__fallback motion-reduce">
@@ -77,7 +77,7 @@
                     <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
                   </div>
                   <button class="share-button__close hidden no-js-hidden">
-                    {% render 'icon-close' %}
+                    <i class="fas fa-times"></i>
                     <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'general.share.close' | t }}</span>
                   </button>
                   <button class="share-button__copy no-js-hidden">

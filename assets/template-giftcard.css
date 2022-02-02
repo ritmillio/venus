@@ -124,14 +124,10 @@ h2,
   border: none;
   padding: 1.5rem 3rem;
   text-decoration: none;
-  background-color: rgb(var(--color-base-accent-1));
-  box-shadow: 0 0 0 0.1rem rgb(var(--color-base-accent-1));
-  color: rgb(var(--color-base-solid-button-labels));
   min-width: 12rem;
   height: auto;
   font-size: 1.5rem;
   letter-spacing: 0.1rem;
-  line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
 
 .button::selection {

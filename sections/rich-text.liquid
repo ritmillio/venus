@@ -1,25 +1,12 @@
-<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'section-rich-text.css' | asset_url }}" media="print" onload="this.media='all'">
-
-<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
-
-<div class="{% unless section.settings.full_width %}page-width{% endunless %}">
-  <div class="rich-text color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width{% endif %}">
-    <div class="rich-text__blocks">
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when 'heading' -%}
-            <h2 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
-          {%- when 'text' -%}
-            <div class="rich-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-          {%- when 'button' -%}
-            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
-              {{ block.settings.button_label | escape }}
-            </a>
-        {%- endcase -%}
-      {%- endfor -%}
-    </div>
+<div class="container mx-auto py-12">
+  <h2 class="text-center text-xl sm:text-2xl md:text-3xl" {{ block.shopify_attributes }}>Rich Text</h2>
+  <div class="m-auto text-center" {{ block.shopify_attributes }}>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe aliquid ex vitae velit cum, animi id voluptatem doloribus eaque itaque laudantium, veritatis inventore obcaecati beatae mollitia placeat! Error, molestiae ipsum?
+  </div>
+  <div class="w-full flex items-center justify-center">
+    <a role="link" aria-disabled="true" href="#" class="bg-red-500 cursor-pointer inline-flex items-center justify-center h-auto text-2xl py-6 px-12 no-underline tracking-widest" {{ block.shopify_attributes }}>
+      Rich Txt Btn
+    </a>
   </div>
 </div>
 

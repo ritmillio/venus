@@ -1,16 +1,10 @@
-{{ 'component-article-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
-
-
 {%- paginate blog.articles by 6 -%}
+  <div class="container mx-auto py-6">
+    <h1 class="text-4xl md:text-5xl font-bold pb-2 pl-2 md:pl-0">{{ blog.title | escape }}</h1>
 
-  <div class="main-blog page-width">
-    <h1 class="title--primary">{{ blog.title | escape }}</h1>
-
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div class="flex flex-col md:flex-row flex-wrap justify-center items-center">
       {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
+        <div class="w-full">
           {%- render 'article-card', article: article, image_height: section.settings.image_height, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author -%}
         </div>
       {%- endfor -%}
@@ -21,6 +15,7 @@
     {%- endif -%}
   </div>
 {%- endpaginate -%}
+
 
 {% schema %}
 {

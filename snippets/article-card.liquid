@@ -13,11 +13,11 @@
     {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
 {% endcomment %}
 
-<article class="article-card{% if article.image == blank or show_image == false %} article-card--no-image{% endif %}" aria-labelledby="Article-{{ article.id }}">
+<article class="flex items-start self-start flex-grow-0 flex-shrink h-full basis-full" aria-labelledby="Article-{{ article.id }}">
   <a href="{{ article.url }}" class="article-content motion-reduce">
     {%- if show_image == true and article.image -%}
-      <div class="article-card__image-wrapper">
-        <div class="article-card__image media {% if image_height %}article-card__image--{{ image_height }}{% else %}media--landscape{% endif %}" {% if section.settings.image_height == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"{% endif %}>
+      <div class="block">
+        <div class="overflow-hidden block relative"{% if section.settings.image_height == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"{% endif %}>
           <img
             srcset="{%- if article.image.src.width >= 165 -%}{{ article.image.src | img_url: '165x' }} 165w,{%- endif -%}
               {%- if article.image.src.width >= 360 -%}{{ article.image.src | img_url: '360x' }} 360w,{%- endif -%}
@@ -32,28 +32,28 @@
             width="{{ article.image.width }}"
             height="{{ article.image.height }}"
             loading="lazy"
-            class="motion-reduce"
+            style="transition: none !important;"
           >
         </div>
       </div>
     {%- endif -%}
 
-    <div class="article-card__info">
-      <header class="article-card__header">
-        <h2 class="article-card__title" id="Article-{{ article.id }}">
+    <div class="flex flex-col flex-grow p-12">
+      <header class="leading-4 mb-5">
+        <h2 class="no-underline break-words" id="Article-{{ article.id }}">
           {{ article.title | escape }}
         </h2>
         {%- if show_date -%}
-          <span class="circle-divider caption-with-letter-spacing">
+          <span class="leading-5">
             {{- article.published_at | time_tag: format: 'date' -}}
           </span>
         {%- endif -%}
         {%- if show_author -%}
-          <span class="caption-with-letter-spacing">{{ article.author -}}</span>
+          <span class="leading-5">{{ article.author -}}</span>
         {%- endif -%}
       </header>
       {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
-        <p class="article-card__excerpt max-w-7xl mt-0 mb-8 my-auto">
+        <p class="w-full max-w-7xl mt-0 mb-8 my-auto">
           {%- if article.excerpt.size > 0 -%}
             {{ article.excerpt | strip_html | truncatewords: 30 }}
           {%- else -%}
@@ -61,7 +61,7 @@
           {%- endif -%}
         </p>
       {%- endif -%}
-      <div class="article-card__footer">
+      <div class="text-2xl tracking-widest">
         {%- if article.comments_count > 0 and blog.comments_enabled? -%}
           <span>{{ 'blogs.article.comments' | t: count: article.comments_count }}</span>
         {%- endif -%}

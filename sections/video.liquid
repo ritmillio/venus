@@ -1,3 +1,6 @@
+{{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+
 <div class="{% unless section.settings.full_width %} container mx-auto{% endunless %}">
   <div{% if section.settings.full_width %} class="container my-0 mx-auto py-0 px-6"{% endif %}>
     <h2 class="title">{{ section.settings.heading }}</h2>

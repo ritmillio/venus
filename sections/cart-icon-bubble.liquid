@@ -5,9 +5,9 @@
     render 'icon-cart'
   endif
 -%}
-<span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'templates.cart.cart' | t }}</span>
+<span class="border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
-  <div class="cart-count-bubble">
+  <div class="empty:hidden flex items-center justify-center h-6 text-sm absolute w-6 rounded-full bottom-3.5 left-9">
       {%- if cart.item_count < 100 -%}
         <span aria-hidden="true">{{ cart.item_count }}</span>
       {%- endif -%}

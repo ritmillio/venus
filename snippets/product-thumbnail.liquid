@@ -20,7 +20,7 @@
 
 <noscript>
   {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
-    <span class="product__media-icon motion-reduce">{% render 'icon-play' %}</span>
+    <span class="product__media-icon motion-reduce"><i class="fa-solid fa-play"></i></span>
     <div class="product__media media" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
       <img
         srcset="{% if media.preview_image.width >= 493 %}{{ media.preview_image | img_url: '493x' }} 493w,{% endif %}
@@ -74,16 +74,13 @@
 
 <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
   <span class="product__media-icon motion-reduce" aria-hidden="true">
-    {%- liquid
-      case media.media_type
-      when 'video' or 'external_video'
-        render 'icon-play'
-      when 'model'
-        render 'icon-3d-model'
-      else
-        render 'icon-zoom'
-      endcase
-    -%}
+    {% if media.media_type == 'video'  ||  media.media_type == 'external_video' %}
+      <i class="fa-solid fa-play"></i>
+    {% elseif %}
+      <i class="fa-solid fa-cube"></i>
+    {% else %}
+      <i class="fa-solid fa-magnifying-glass"></i>
+    {% endif %}
   </span>
 
   <div class="product__media media media--transparent" style="padding-top: {{ 1 | divided_by: media.preview_image.aspect_ratio | times: 100 }}%;">
@@ -125,10 +122,10 @@
     <span class="deferred-media__poster-button motion-reduce">
       {%- if media.media_type == 'model' -%}
         <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.media.play_model' | t }}</span>
-        {%- render 'icon-3d-model' -%}
+        <i class="fa-solid fa-cube"></i>
       {%- else -%}
         <span class="visually-hidden border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'products.product.media.play_video' | t }}</span>
-        {%- render 'icon-play' -%}
+        <i class="fa-solid fa-play"></i>
       {%- endif -%}
     </span>
     <img
@@ -182,7 +179,7 @@
         data-shopify-title="title"
         data-shopify-xr-hidden
         >
-        {% render 'icon-3d-model' %}
+        <i class="fa-solid fa-cube"></i>
         {{ 'products.product.xr_button' | t }}
       </button>
     {%- endif -%}

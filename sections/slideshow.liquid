@@ -116,8 +116,8 @@
 
       {%- if section.settings.auto_rotate -%}
         <button type="button" class="slideshow__autoplay slider-button no-js-hidden{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}" aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}">
-          {%- render 'icon-pause' -%}
-          {%- render 'icon-play' -%}
+          <i class="fa-solid fa-pause"></i>
+          <i class="fa-solid fa-play"></i>
         </button>
       {%- endif -%}
     </div>

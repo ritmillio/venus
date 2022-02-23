@@ -1,10 +1,8 @@
-{%- liquid
-  if cart == empty
-    render 'icon-cart-empty'
-  else
-    render 'icon-cart'
-  endif
--%}
+{% if cart.total_price == 0 %}
+  <i class="fa-thin fa-cart-flatbed-empty"></i>
+{% else %}
+  <i class="fa-solid fa-cart-shopping"></i>
+{% endif %}
 <span class="border-0 h-px -m-px overflow-hidden p-0 absolute w-px">{{ 'templates.cart.cart' | t }}</span>
 {%- if cart != empty -%}
   <div class="empty:hidden flex items-center justify-center h-6 text-sm absolute w-6 rounded-full bottom-3.5 left-9">

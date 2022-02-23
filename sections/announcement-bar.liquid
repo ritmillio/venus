@@ -9,7 +9,7 @@
               <p class="announcement-bar__message h5">
                 {{ block.settings.text | escape }}
                 {%- if block.settings.link != blank -%}
-                  {% render 'icon-arrow' %}
+                <i class="fa-solid fa-arrow-down"></i>
                 {%- endif -%}
               </p>
           {%- if block.settings.link != blank -%}

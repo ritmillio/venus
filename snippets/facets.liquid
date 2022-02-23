@@ -75,19 +75,7 @@
                               <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                             </svg>
 
-                            <svg class="icon icon-checkmark"
-                              width="1.1rem"
-                              height="0.7rem"
-                              viewBox="0 0 11 7"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg">
-
-                              <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1"
-                                stroke="currentColor"
-                                stroke-width="1.75"
-                                stroke-linecap="round"
-                                stroke-linejoin="round" />
-                            </svg>
+                            <i class="fa-solid fa-check"></i>
 
                             {{ value.label | escape }} ({{ value.count }})
                           </label>
@@ -254,7 +242,7 @@
     <details class="mobile-facets__disclosure disclosure-has-popup">
       <summary class="mobile-facets__open-wrapper focus-offset">
         <span class="mobile-facets__open">
-          {% render 'icon-filter' %}
+          <i class="fa-solid fa-filter"></i>
           <span class="mobile-facets__open-label button-label">
             {%- if enable_filtering and enable_sorting -%}
               {{ 'products.facets.filter_and_sort' | t }}
@@ -300,13 +288,13 @@
                     <summary class="mobile-facets__summary focus-inset">
                       <div>
                         <span>{{ filter.label | escape }}</span>                        
-                        <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
+                        <span class="mobile-facets__arrow no-js-hidden"><i class="fa-solid fa-arrow-down"></i></span>
                         <noscript>{% render 'icon-caret' %}</noscript>
                       </div>
                     </summary>
                     <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu">
                       <button class="mobile-facets__close-button link link--text focus-inset" aria-expanded="true" type="button">
-                        {% render 'icon-arrow' %}
+                        <i class="fa-solid fa-arrow-down"></i>
                         {{ filter.label | escape }}
                       </button>
                       <ul class="mobile-facets__list m-0 p-0 list-none" role="list">
@@ -324,9 +312,7 @@
                                 <rect width="16" height="16" stroke="currentColor" fill="none" stroke-width="1"></rect>
                               </svg>
 
-                              <svg class="icon icon-checkmark" width="1.1rem" height="0.7rem" viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
+                              <i class="fa-solid fa-check"></i>
 
                               {{ value.label | escape }} ({{ value.count }})
                             </label>
@@ -348,13 +334,13 @@
                     <summary class="mobile-facets__summary focus-inset">
                       <div>
                         <span>{{ filter.label | escape }}</span>
-                        <span class="mobile-facets__arrow no-js-hidden">{% render 'icon-arrow' %}</span>
+                        <span class="mobile-facets__arrow no-js-hidden"><i class="fa-solid fa-arrow-down"></i></span>
                         <noscript>{% render 'icon-caret' %}</noscript>
                       </div>
                     </summary>
                     <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu">
                       <button class="mobile-facets__close-button link link--text focus-inset" aria-expanded="true" type="button">
-                        {% render 'icon-arrow' %}
+                        <i class="fa-solid fa-arrow-down"></i>
                         {{ filter.label | escape }}
                       </button>
 

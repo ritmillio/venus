@@ -92,15 +92,15 @@
                       {{ 'newsletter.label' | t }}
                     </label>
                     <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
-                      {% render 'icon-arrow' %}
+                      <i class="fa-solid fa-arrow-down"></i>
                     </button>
                   </div>
                   {%- if form.errors -%}
-                    <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+                    <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}"><i class="fa-duotone fa-triangle-exclamation"></i>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
                   {%- endif -%}
                 </div>
                 {%- if form.posted_successfully? -%}
-                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>{% render 'icon-success' %}{{ 'newsletter.success' | t }}</h3>
+                  <h3 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus><i class="fa-duotone fa-badge-check"></i>{{ 'newsletter.success' | t }}</h3>
                 {%- endif -%}
               {% endform %}
             </div>

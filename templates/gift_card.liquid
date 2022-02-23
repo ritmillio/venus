@@ -120,7 +120,7 @@
           <button class="link gift-card__copy-link">{{ 'gift_cards.issued.copy_code' | t }}</button>
           <span class="gift-card__copy-success form__message" role="status"></span>
           <template>
-            {%- render 'icon-success' -%}{{ 'gift_cards.issued.copy_code_success' | t }}
+            <i class="fa-duotone fa-badge-check"></i>{{ 'gift_cards.issued.copy_code_success' | t }}
           </template>
         </div>
         {%- if gift_card.pass_url -%}

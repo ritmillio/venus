@@ -34,5 +34,3 @@ Currently the theme is under going maintance but you can check performance with 
 2. Locate Apps and find `Manage private apps`, then Create new private app --> Give a private app name then in the Admin API select all the available checkboxes to Read and Write or if only Read is possible then select that choice. The last step is to Save the private app which will Generate an API password.
 3. Open a terminal, paste the following command and fulfill with your api password, your shopify store url, and your shopify theme ID (For getting the theme ID you need to click on edit code to the uploaded theme and from your URL slug you can get the theme ID value fx:127829016754) : ```theme get --password=Your-api-password --store=Your-store.myshopify.com --themeid=Your-theme-id```
 4. This command will download the theme to your local machine, thene we can simple watch the theme for changes with the command of: ```theme watch```
-
-### Note that this Shopify Theme is still under development therefor you will find classes from the Shopify Dawn theme since I have using it as a starting point.
